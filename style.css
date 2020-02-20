@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+:root {
+ --header-height: 65px;
+}
+
 html{
     height: 100%;
 }
@@ -14,11 +18,14 @@ body {
 
 #header{
     width: 100%;
-    height: 65px;
-    border: 2px dashed green;
+    height: var(--header-height);
     display: flex;
     align-items: center;
     justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    border: 2px solid green;
 }
 
 .logo {
@@ -27,11 +34,55 @@ body {
 
 #empty-div {
     width: 25%;
-    border: 3px solid red;
+    
 }
 
 .navbar {
+    display: flex;
     width: 40%;
     height: 100%;
-    border: 5px dashed blue;
+    
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar a {
+     color: black;
+     font-size: 1.2rem;
+     text-decoration: none;
+     
+}
+
+.title {
+    margin-top: calc(var(--header-height) + 20px);
+    text-align: center;
+}
+
+#form {
+    display: block;
+    margin: auto;
+    width: 50%;
+    min-width: 400px;
+    margin-top: 20px;
+}
+
+#form input[type="email"] {
+    display: block;
+    margin: auto;
+    padding: 0 5px;
+    width: 300px;
+    border: 1px solid grey;
+    height: 30px;
+}
+
+#submit{
+    display: block;
+    margin: auto;
+    width:  150px;
+    margin-top: 20px;
+    font-weight: 900;
+    background-color: #f1c40f;
+    text-transform: uppercase;
+    height: 30px;
+    border: none;
 }
